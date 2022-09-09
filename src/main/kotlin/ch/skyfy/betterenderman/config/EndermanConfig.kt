@@ -48,9 +48,7 @@ data class EndermanConfig(
     @JvmField val teleportationDistanceYMax: Int,
     @JvmField val teleportationDistanceZMin: Int,
     @JvmField val teleportationDistanceZMax: Int,
-
-
-    ) : Validatable {
+) : Validatable {
     override fun validateImpl(errors: MutableList<String>) {
         val list: List<Pair<Int, Int>> = listOf(Pair(teleportationDistanceXMin, teleportationDistanceXMax), Pair(teleportationDistanceYMin, teleportationDistanceYMax), Pair(teleportationDistanceZMin, teleportationDistanceZMax))
         for (entry in list) {

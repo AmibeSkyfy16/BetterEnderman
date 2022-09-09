@@ -20,7 +20,6 @@ public class EndermanEntityMixin {
                     value = "INVOKE",
                     target = "Lnet/minecraft/entity/mob/EndermanEntity;teleportTo(DDD)Z"
             )
-
     )
     public void teleportRandomly(Args args) {
         var random = Random.Default;
@@ -30,7 +29,6 @@ public class EndermanEntityMixin {
         var data = Configs.INSTANCE.getENDERMAN_CONFIG().data;
         if(!data.enableTeleportationDistance)return;
 
-
         var entity = (EndermanEntity)(Object)this;
 
         var x = Double.valueOf(entity.getX() + (random.nextInt(data.teleportationDistanceXMin, data.teleportationDistanceXMax) * negative));
@@ -39,7 +37,6 @@ public class EndermanEntityMixin {
         args.set(0, x);
         args.set(1, y);
         args.set(2, z);
-        System.out.println("Next pos: " + x + " " + y + " " + z);
     }
 
     @Inject(method = "teleportTo(DDD)Z", at = @At("HEAD"), cancellable = true)
