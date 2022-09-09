@@ -1,1 +1,1 @@
-![](./docs/readme.svg)
+![](./docs/readme_github.svg)
