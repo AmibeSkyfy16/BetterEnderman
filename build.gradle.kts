@@ -110,7 +110,7 @@ tasks {
 
     val copyJarToTestServer = register("copyJarToTestServer") {
         println("copy to server")
-        copyFile("build/libs/TinyEconomyRenewed-${project.properties["mod_version"]}.jar", project.property("testServerModsFolder") as String)
+        copyFile("build/libs/BetterEnderman-${project.properties["mod_version"]}.jar", project.property("testServerModsFolder") as String)
     }
 
     build {
