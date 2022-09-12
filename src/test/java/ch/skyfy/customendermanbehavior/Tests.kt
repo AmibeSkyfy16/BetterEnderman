@@ -1,4 +1,4 @@
-package ch.skyfy.tinyeconomyrenewed
+package ch.skyfy.customendermanbehavior
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
@@ -17,11 +17,7 @@ class Tests {
 
     @Test
     fun test2(){
-        val random = Random.create()
-        for(i in 0..1000) {
-            val test = random.nextDouble()
-            println(test)
-        }
+
     }
 
 }

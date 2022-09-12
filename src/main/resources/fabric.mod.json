@@ -1,26 +1,26 @@
 {
   "schemaVersion": 1,
-  "id": "betterenderman",
+  "id": "customendermanbehavior",
   "version": "${version}",
-  "name": "BetterEnderman",
-  "description": "Allow you to disable some behavior for the enderman entity",
+  "name": "CustomEndermanBehavior",
+  "description": "Allow you to disable some behavior for the enderman entity (like picking up bloc, teleporting, etc.)",
   "authors": [
     "Skyfy16"
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/betterenderman/icon.png",
+  "icon": "assets/customendermanbehavior/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       {
         "adapter": "kotlin",
-        "value": "ch.skyfy.betterenderman.BetterEndermanMod"
+        "value": "ch.skyfy.customendermanbehavior.CustomEndermanBehaviorMod"
       }
     ]
   },
   "mixins": [
-    "betterenderman.mixins.json"
+    "customendermanbehavior.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.9",

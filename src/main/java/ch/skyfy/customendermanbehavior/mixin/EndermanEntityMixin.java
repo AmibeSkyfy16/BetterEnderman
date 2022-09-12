@@ -1,6 +1,6 @@
-package ch.skyfy.betterenderman.mixin;
+package ch.skyfy.customendermanbehavior.mixin;
 
-import ch.skyfy.betterenderman.config.Configs;
+import ch.skyfy.customendermanbehavior.config.Configs;
 import kotlin.random.Random;
 import net.minecraft.entity.mob.EndermanEntity;
 import net.minecraft.entity.player.PlayerEntity;

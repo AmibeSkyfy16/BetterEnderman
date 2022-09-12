@@ -1,8 +1,8 @@
-package ch.skyfy.betterenderman.utils
+package ch.skyfy.customendermanbehavior.utils
 
 
-import ch.skyfy.betterenderman.BetterEndermanMod.Companion.CONFIG_DIRECTORY
-import ch.skyfy.betterenderman.BetterEndermanMod.Companion.LOGGER
+import ch.skyfy.customendermanbehavior.CustomEndermanBehaviorMod.Companion.CONFIG_DIRECTORY
+import ch.skyfy.customendermanbehavior.CustomEndermanBehaviorMod.Companion.LOGGER
 import kotlin.io.path.createDirectory
 import kotlin.io.path.exists
 

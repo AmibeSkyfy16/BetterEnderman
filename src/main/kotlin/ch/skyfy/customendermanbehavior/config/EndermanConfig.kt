@@ -1,4 +1,4 @@
-package ch.skyfy.betterenderman.config
+package ch.skyfy.customendermanbehavior.config
 
 import ch.skyfy.tomlconfiglib.Defaultable
 import ch.skyfy.tomlconfiglib.Validatable
@@ -17,7 +17,7 @@ data class EndermanConfig(
         Default: false
     """
     )
-    @JvmField val allowEndermanToPickup: Boolean,
+    @JvmField val allowEndermanToPickupBlocks: Boolean,
 
     @TomlComment(
         """
@@ -66,7 +66,7 @@ data class EndermanConfig(
 
 class DefaultEndermanConfig : Defaultable<EndermanConfig> {
     override fun getDefault() = EndermanConfig(
-        allowEndermanToPickup = false,
+        allowEndermanToPickupBlocks = false,
         enableTeleportationDistance = false,
         disableEndermanFromAttackingFirst = false,
         disableEndermanFromTeleporting = false,

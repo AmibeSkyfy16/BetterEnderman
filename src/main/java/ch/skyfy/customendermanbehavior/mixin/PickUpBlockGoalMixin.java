@@ -1,6 +1,6 @@
-package ch.skyfy.betterenderman.mixin;
+package ch.skyfy.customendermanbehavior.mixin;
 
-import ch.skyfy.betterenderman.config.Configs;
+import ch.skyfy.customendermanbehavior.config.Configs;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -11,7 +11,7 @@ public class PickUpBlockGoalMixin {
 
     @Inject(method = "tick",at = @At("HEAD"), cancellable = true)
     public void tick(CallbackInfo ci){
-        if(!Configs.INSTANCE.getENDERMAN_CONFIG().data.allowEndermanToPickup)ci.cancel();
+        if(!Configs.INSTANCE.getENDERMAN_CONFIG().data.allowEndermanToPickupBlocks)ci.cancel();
     }
 
 }
