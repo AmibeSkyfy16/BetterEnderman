@@ -3,7 +3,7 @@
   "id": "customendermanbehavior",
   "version": "${version}",
   "name": "CustomEndermanBehavior",
-  "description": "Allow you to disable some behavior for the enderman entity (like picking up bloc, teleporting, etc.)",
+  "description": "Allow you to disable some behavior for the enderman entity (like picking up blocks, teleporting, etc.)",
   "authors": [
     "Skyfy16"
   ],
