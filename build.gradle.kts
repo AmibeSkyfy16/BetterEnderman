@@ -12,15 +12,14 @@
 
 @file:Suppress("GradlePackageVersionRange")
 
-import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.archivesName
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val transitiveInclude: Configuration by configurations.creating
 
 plugins {
     id("fabric-loom") version "1.0-SNAPSHOT"
-    id("org.jetbrains.kotlin.jvm") version "1.7.10"
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.7.10"
+    id("org.jetbrains.kotlin.jvm") version "1.7.22"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.7.22"
     idea
 }
 
@@ -47,11 +46,11 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${properties["fabric_version"]}")
     modImplementation("net.fabricmc:fabric-language-kotlin:${properties["fabric_kotlin_version"]}")
 
-    transitiveInclude(implementation("ch.skyfy.tomlconfiglib:toml-config-lib:1.0.0")!!)
+    transitiveInclude(implementation("ch.skyfy.tomlconfiglib:toml-config-lib:1.0.1")!!)
 
     handleIncludes(project, transitiveInclude)
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.10")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.22")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
 }
 tasks {
@@ -71,8 +70,8 @@ tasks {
     }
 
     named<Wrapper>("wrapper") {
-        gradleVersion = "7.5.1"
-        distributionType = Wrapper.DistributionType.ALL
+        gradleVersion = "7.6"
+        distributionType = Wrapper.DistributionType.BIN
     }
 
     named<KotlinCompile>("compileKotlin") {
@@ -87,7 +86,7 @@ tasks {
 
     named<Jar>("jar") {
         from("LICENSE") {
-            rename { "${it}_${archivesName}" }
+            rename { "${it}_${project.base.archivesName.get()}" }
         }
     }
 

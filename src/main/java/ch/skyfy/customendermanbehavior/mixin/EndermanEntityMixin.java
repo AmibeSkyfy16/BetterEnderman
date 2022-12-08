@@ -27,7 +27,7 @@ public class EndermanEntityMixin {
         var negative = negativeRandom == 0 ? 1 : -1;
 
         var data = Configs.INSTANCE.getENDERMAN_CONFIG().data;
-        if(!data.enableTeleportationDistance)return;
+        if(!data.enableCustomTeleportationDistance)return;
 
         var entity = (EndermanEntity)(Object)this;
 
@@ -41,7 +41,7 @@ public class EndermanEntityMixin {
 
     @Inject(method = "teleportTo(DDD)Z", at = @At("HEAD"), cancellable = true)
     public void teleport(double x, double y, double z, CallbackInfoReturnable<Boolean> cir){
-        if(Configs.INSTANCE.getENDERMAN_CONFIG().data.disableEndermanFromTeleporting){
+        if(Configs.INSTANCE.getENDERMAN_CONFIG().data.preventEndermanFromTeleporting){
             cir.setReturnValue(false);
             cir.cancel();
         }
@@ -49,7 +49,7 @@ public class EndermanEntityMixin {
 
     @Inject(method = "isPlayerStaring", at = @At("RETURN"), cancellable = true)
     public void staring(PlayerEntity player, CallbackInfoReturnable<Boolean> cir){
-        if(Configs.INSTANCE.getENDERMAN_CONFIG().data.disableEndermanFromAttackingFirst) cir.setReturnValue(false);
+        if(Configs.INSTANCE.getENDERMAN_CONFIG().data.preventEndermanFromAttackingFirst) cir.setReturnValue(false);
     }
 
 }

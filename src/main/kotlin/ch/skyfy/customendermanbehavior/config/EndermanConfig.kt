@@ -25,7 +25,7 @@ data class EndermanConfig(
         Default: false -> mean it's like vanilla minecraft
     """
     )
-    @JvmField val disableEndermanFromAttackingFirst: Boolean,
+    @JvmField val preventEndermanFromAttackingFirst: Boolean,
 
     @TomlComment(
         """
@@ -33,7 +33,7 @@ data class EndermanConfig(
         Default: false -> mean it's like vanilla minecraft
     """
     )
-    @JvmField val disableEndermanFromTeleporting: Boolean,
+    @JvmField val preventEndermanFromTeleporting: Boolean,
 
     @TomlComment(
         """
@@ -41,7 +41,7 @@ data class EndermanConfig(
         Default: false -> mean it's like vanilla minecraft
     """
     )
-    @JvmField val enableTeleportationDistance: Boolean,
+    @JvmField val enableCustomTeleportationDistance: Boolean,
     @JvmField val teleportationDistanceXMin: Int,
     @JvmField val teleportationDistanceXMax: Int,
     @JvmField val teleportationDistanceYMin: Int,
@@ -67,11 +67,11 @@ data class EndermanConfig(
 class DefaultEndermanConfig : Defaultable<EndermanConfig> {
     override fun getDefault() = EndermanConfig(
         allowEndermanToPickupBlocks = false,
-        enableTeleportationDistance = false,
-        disableEndermanFromAttackingFirst = false,
-        disableEndermanFromTeleporting = false,
-        teleportationDistanceXMin = 1, teleportationDistanceXMax = 10,
-        teleportationDistanceYMin = 1, teleportationDistanceYMax = 10,
-        teleportationDistanceZMin = 1, teleportationDistanceZMax = 10,
+        enableCustomTeleportationDistance = false,
+        preventEndermanFromAttackingFirst = false,
+        preventEndermanFromTeleporting = false,
+        teleportationDistanceXMin = 1, teleportationDistanceXMax = 20,
+        teleportationDistanceYMin = 1, teleportationDistanceYMax = 20,
+        teleportationDistanceZMin = 1, teleportationDistanceZMax = 20,
     )
 }
