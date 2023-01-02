@@ -18,8 +18,8 @@ val transitiveInclude: Configuration by configurations.creating
 
 plugins {
     id("fabric-loom") version "1.0-SNAPSHOT"
-    id("org.jetbrains.kotlin.jvm") version "1.7.22"
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.7.22"
+    id("org.jetbrains.kotlin.jvm") version "1.8.0"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.8.0"
     idea
 }
 
@@ -50,7 +50,7 @@ dependencies {
 
     handleIncludes(project, transitiveInclude)
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.22")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.8.0")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
 }
 tasks {
